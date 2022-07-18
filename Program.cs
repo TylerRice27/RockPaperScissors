@@ -28,7 +28,7 @@ internal class Program
 
             Random randomChoice = new Random();
             int computerChoice = randomChoice.Next(1, 3);
-            char keepPlaying = Console.ReadKey().KeyChar;
+            // char keepPlaying = Console.ReadKey().KeyChar;
 
             switch (computerChoice)
             {
@@ -108,12 +108,19 @@ internal class Program
                     break;
 
             }
+            Console.Write(@$"User has {userPoints} Wins || Computer has {computerPoints} Wins! ");
 
 
 
 
-            Console.WriteLine("Do you wish to play again?")
-            if (keepPlaying == 'n')
+            Console.WriteLine("Do you wish to play again?");
+            Console.WriteLine("Y or N ");
+            char keepPlaying = Console.ReadKey().KeyChar;
+            if (keepPlaying == 'y')
+            {
+                continue;
+            }
+            else if (keepPlaying == 'n')
             {
                 playing = false;
                 break;
