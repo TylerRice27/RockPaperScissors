@@ -15,6 +15,7 @@ internal class Program
         bool playing = true;
         int userPoints = 0;
         int computerPoints = 0;
+        int tiePoints = 0;
         while (playing)
         {
             // Game Logic ...
@@ -39,6 +40,7 @@ internal class Program
                         Console.WriteLine("User choose Rock");
                         Console.WriteLine("Computer choose Rock");
                         Console.WriteLine("Tie Game");
+                        tiePoints++;
                     }
 
                     else if (input == 2)
@@ -71,6 +73,7 @@ internal class Program
                         Console.WriteLine("User choose Paper");
                         Console.WriteLine("Computer choose Paper");
                         Console.WriteLine("Tie Game");
+                        tiePoints++;
 
                     }
                     if (input == 3)
@@ -103,12 +106,13 @@ internal class Program
                         Console.WriteLine("User choose Scissors");
                         Console.WriteLine("Computer choose Scissors");
                         Console.WriteLine("Tie Game");
+                        tiePoints++;
 
                     }
                     break;
 
             }
-            Console.Write(@$"User has {userPoints} Wins || Computer has {computerPoints} Wins! ");
+            Console.Write(@$"User has {userPoints} Wins || Computer has {computerPoints} Wins! || Tie Games {tiePoints} ");
 
 
 
@@ -129,3 +133,4 @@ internal class Program
 
     }
 }
+
