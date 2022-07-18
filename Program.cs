@@ -13,6 +13,8 @@ internal class Program
         choices.Add(3, "Scissors");
 
         bool playing = true;
+        int userPoints = 0;
+        int computerPoints = 0;
         while (playing)
         {
             // Game Logic ...
@@ -27,11 +29,90 @@ internal class Program
             Random randomChoice = new Random();
             int computerChoice = randomChoice.Next(1, 3);
             char keepPlaying = Console.ReadKey().KeyChar;
-            if (input == 1)
+
+            switch (computerChoice)
             {
-                Console.WriteLine("Rock");
+                case 1:
+
+                    if (input == 1)
+                    {
+                        Console.WriteLine("User choose Rock");
+                        Console.WriteLine("Computer choose Rock");
+                        Console.WriteLine("Tie Game");
+                    }
+
+                    else if (input == 2)
+                    {
+                        Console.WriteLine("User choose Paper");
+                        Console.WriteLine("Computer choose Rock");
+                        Console.WriteLine("Player Wins!");
+                        userPoints++;
+                    }
+                    if (input == 3)
+                    {
+                        Console.WriteLine("User choose Scissors");
+                        Console.WriteLine("Computer choose Rock");
+                        Console.WriteLine("Player Losses!");
+                        computerPoints++;
+                    }
+                    break;
+                case 2:
+
+                    if (input == 1)
+                    {
+                        Console.WriteLine("User choose Rock");
+                        Console.WriteLine("Computer choose Paper");
+                        Console.WriteLine("Player Loses");
+                        computerPoints++;
+                    }
+
+                    else if (input == 2)
+                    {
+                        Console.WriteLine("User choose Paper");
+                        Console.WriteLine("Computer choose Paper");
+                        Console.WriteLine("Tie Game");
+
+                    }
+                    if (input == 3)
+                    {
+                        Console.WriteLine("User choose Scissors");
+                        Console.WriteLine("Computer choose Paper");
+                        Console.WriteLine("Player Wins!");
+                        userPoints++;
+                    }
+                    break;
+                case 3:
+
+                    if (input == 1)
+                    {
+                        Console.WriteLine("User choose Rock");
+                        Console.WriteLine("Computer choose Scissors");
+                        Console.WriteLine("Tie Game");
+                        userPoints++;
+                    }
+
+                    else if (input == 2)
+                    {
+                        Console.WriteLine("User choose Paper");
+                        Console.WriteLine("Computer choose Scissors");
+                        Console.WriteLine("Player Wins!");
+                        computerPoints++;
+                    }
+                    if (input == 3)
+                    {
+                        Console.WriteLine("User choose Scissors");
+                        Console.WriteLine("Computer choose Scissors");
+                        Console.WriteLine("Tie Game");
+
+                    }
+                    break;
+
             }
 
+
+
+
+            Console.WriteLine("Do you wish to play again?")
             if (keepPlaying == 'n')
             {
                 playing = false;
